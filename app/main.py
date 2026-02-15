@@ -1,6 +1,7 @@
 import joblib
 import logging
 import os
+import subprocess
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException
@@ -14,7 +15,8 @@ PREPROCESSOR_PATH = "models/preprocessing.pkl"
 
 def load_artifacts():
     if not os.path.exists(MODEL_PATH) or not os.path.exists(PREPROCESSOR_PATH):
-        raise FileNotFoundError("Model artifacts not found. Run training first.")
+        logging.info("Model artifacts not found. Running training...")
+        subprocess.run(["python", "src/train.py"], check=True)
 
     model = joblib.load(MODEL_PATH)
     scaler = joblib.load(PREPROCESSOR_PATH)
