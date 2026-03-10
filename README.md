@@ -13,7 +13,7 @@ The service exposes a REST endpoint for predictions and runs inside a fully cont
 
 ---
 
-## 🎯 Why This Matters
+## Why This Matters
 
 This project demonstrates **production-ready ML architecture**:
 
@@ -128,9 +128,9 @@ pytest==9.0.2
 ```
 
 This ensures:
-- ✅ Same packages across dev/staging/production
-- ✅ Docker images are reproducible
-- ✅ No surprise breaking changes
+ Same packages across dev/staging/production
+ Docker images are reproducible
+ No surprise breaking changes
 
 ## 9. Engineering Decisions
 
